@@ -1,0 +1,28 @@
+{
+  "name": "@vandeurenglenn/esm-providers",
+  "version": "0.1.0",
+  "description": "Collection of package/modules aka code providers",
+  "main": "esm-providers",
+  "exports": {
+    ".": "./esm-providers.js",
+    "./providers": "./lib/providers.js",
+    "./providers/fs": "./lib/providers/fs.js",
+    "./providers/github": "./lib/providers/github.js",
+    "./providers/npm": "./lib/providers/npm.js"
+  },
+  "type": "module",
+  "types": "esm-providers.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/semver": "^7.3.13"
+  },
+  "dependencies": {
+    "decompress": "^4.2.1",
+    "download": "^8.0.0"
+  }
+}
