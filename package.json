@@ -1,6 +1,6 @@
 {
   "name": "@vandeurenglenn/esm-providers",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Collection of package/modules aka code providers",
   "main": "esm-providers",
   "exports": {
