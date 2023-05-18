@@ -29,9 +29,8 @@ export const get = async (name, options = { packageJson: {}, destination: 'node_
   if (!options.destination) options.destination =  'node_modules'
   if (options.provider && !availableProviders.includes(options.provider)) throw new Error(`unsupported provider, got ${options.provider}.\n\navailableProviders:\n  -${availableProviders.join('\n  -')}`)
   if (options.provider) {
-    const result = await providers[options.provider].get(name, options.destination)
-    if (result) return providerResult(name, options.destination, options.packageJson)
-    else throw new Error(`nothing found for ${name}`)
+    await providers[options.provider].get(name, options.destination)
+    return providerResult(name, options.destination, options.packageJson)
   }
   
   const iterate = async function* (name, destination) {
@@ -51,5 +50,5 @@ export const get = async (name, options = { packageJson: {}, destination: 'node_
     if (data) return providerResult(name, options.destination, options.packageJson)
   }
 
-  throw new Error(`nothing found for ${name}`)  
+  return
 }
